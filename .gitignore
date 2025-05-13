@@ -1,0 +1,5 @@
+RouteAggregator/.vs/RouteAggregator/DesignTimeBuild/
+RouteAggregator/.vs/
+*.csproj.user
+*/obj/*
+**/obj/*
