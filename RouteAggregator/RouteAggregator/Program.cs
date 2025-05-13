@@ -1,34 +1,22 @@
+using RouteAggregator.Model;
+using RouteAggregator.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddHttpClient();
+builder.Services.AddTransient<IApplicationConfiguration, ApplicationConfiguration>();
+builder.Services.AddTransient<IRouteAggregatorService, RouteAggregatorService>();
+builder.Services.AddTransient<IRouteProvider, Flight1Provider>();
+builder.Services.AddTransient<IRouteProvider, Flight2Provider>();
+
+builder.Services.AddMvc()
+    .AddControllersAsServices();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast = Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-});
-
+app.UseRouting();
+app.MapControllers();
 app.Run();
-
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

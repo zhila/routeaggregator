@@ -3,3 +3,4 @@ RouteAggregator/.vs/
 *.csproj.user
 */obj/*
 **/obj/*
+**/bin/*
