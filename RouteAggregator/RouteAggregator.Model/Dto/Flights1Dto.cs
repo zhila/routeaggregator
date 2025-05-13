@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace RouteAggregator.Model.Flights1
+namespace RouteAggregator.Model.Dto
 {
     public class Flights1Dto
     {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RouteAggregator.Model;
+using RouteAggregator.Model.Services;
 
 namespace RouteAggregator;
 
