@@ -3,7 +3,7 @@ using System.Net.Http;
 using RouteAggregator.Model;
 using RouteAggregator.Model.Dto;
 
-namespace RouteAggregator.Services
+namespace RouteAggregator.Services.Providers
 {
     public class Flight1Provider : BaseRouteProvider<Flights1Dto>
     {

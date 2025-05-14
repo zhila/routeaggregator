@@ -8,9 +8,9 @@ using System.Runtime.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace RouteAggregator.Services
+namespace RouteAggregator.Services.Providers
 {
-    public abstract class BaseRouteProvider<T> : IRouteProvider where T: class
+    public abstract class BaseRouteProvider<T> : IRouteProvider where T : class
     {
         private readonly IHttpClientFactory _clientFactory;
 

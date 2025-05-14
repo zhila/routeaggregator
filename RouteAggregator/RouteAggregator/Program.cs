@@ -1,6 +1,7 @@
 using RouteAggregator.Model;
 using RouteAggregator.Model.Services;
 using RouteAggregator.Services;
+using RouteAggregator.Services.Providers;
 
 var builder = WebApplication.CreateBuilder(args);
 
